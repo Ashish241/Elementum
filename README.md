@@ -1,98 +1,91 @@
 # Elementum
 
-Elementum is a premium, state-of-the-art landing page website designed for a modern creative team consisting of strategists, designers, communicators, and researchers. The website features rich aesthetics, sleek typography, harmonious HSL palettes, smooth ScrollTrigger-based animations, and responsive layouts.
+Elementum is a premium landing page experience built for modern creative teams of strategists, designers, communicators, and researchers. The project combines elegant typography, refined color palettes, smooth scroll-triggered animations, and responsive layouts.
 
 ---
 
-## 🚀 Tech Stack & Libraries
+## 🚀 Tech Stack
 
-The website is built using the following modern web technologies:
-
-- **Core**: React (v19) + TypeScript + Vite
-- **Styling**: TailwindCSS (v3) + PostCSS
-- **Animations**: GSAP (GreenSock Animation Platform) + ScrollTrigger plugin + Tailwind Animate
-- **Icons**: Lucide React
-- **Typography**: Playfair Display (Headers) & Inter (Body text) via `@fontsource`
+- **React** (v19) + **TypeScript**
+- **Vite** for fast development and production builds
+- **Tailwind CSS** (v3) + **PostCSS** for styling
+- **GSAP** + **ScrollTrigger** for scroll-driven animation
+- **Lucide React** for icons
+- **@fontsource** for Playfair Display and Inter typography
+- **npm workspaces** with a root-level workspace for `app`
 
 ---
 
 ## 📁 Project Structure
 
-The project has its main application files nested within the `/app` directory:
-
 ```text
 Elementum/
-├── app/                  # Main Vite + React + TypeScript workspace
-│   ├── public/           # Static assets (images, team photos, vectors)
+├── app/                  # Main Vite + React + TypeScript application
+│   ├── public/           # Static assets (images, icons, vectors)
 │   ├── src/
-│   │   ├── components/   # Shared UI components (Navbar, Footer, Shadcn UI elements)
+│   │   ├── components/   # Shared UI components and Shadcn UI wrappers
 │   │   ├── hooks/        # Custom React hooks
-│   │   ├── pages/        # Main pages (Home page template)
-│   │   ├── sections/     # Modular section components:
-│   │   │   ├── HeroSection.tsx
-│   │   │   ├── TomorrowSection.tsx
-│   │   │   ├── ProgressSection.tsx
-│   │   │   ├── ServicesSection.tsx
-│   │   │   ├── TestimonialsSection.tsx
-│   │   │   └── NewsletterSection.tsx
-│   │   ├── App.css       # App-specific overrides
-│   │   ├── App.tsx       # Main page layout coordinator
-│   │   ├── index.css     # Global style sheet and custom tailwind layers
-│   │   └── main.tsx      # Application entry point
-│   ├── package.json      # Node.js project manifests
-│   └── vite.config.ts    # Vite bundler configurations
-└── README.md             # Project documentation (this file)
+│   │   ├── lib/          # Utility helpers
+│   │   ├── pages/        # Page-level components
+│   │   ├── sections/     # Landing page sections
+│   │   ├── App.css       # Application-specific styles
+│   │   ├── App.tsx       # Main layout and routing
+│   │   ├── index.css     # Global styles and Tailwind directives
+│   │   └── main.tsx      # React entry point
+│   ├── package.json      # App package manifest
+│   ├── postcss.config.js # PostCSS configuration
+│   ├── tailwind.config.js# Tailwind configuration
+│   ├── tsconfig.app.json # App TypeScript config
+│   ├── tsconfig.json     # App-wide TypeScript config
+│   └── vite.config.ts    # Vite configuration
+├── package.json          # Root npm workspace manifest
+└── README.md             # Project documentation
 ```
 
 ---
 
-## 🛠️ Installation & Setup
+## ⚙️ Getting Started
 
-Follow these steps to run the website locally on your system:
+From the repository root, install dependencies and run the app using the workspace scripts.
 
-### 1. Prerequisite
-Ensure you have **Node.js** (v18 or higher recommended) and **npm** installed on your system.
-
-### 2. Navigate to the App directory
-Open your terminal in the root of the project and navigate to the `app` directory:
-```bash
-cd app
-```
-
-### 3. Install Dependencies
-Run the install command to fetch all required libraries:
 ```bash
 npm install
-```
-
-### 4. Run the Development Server
-Launch the local development environment:
-```bash
 npm run dev
 ```
-Once started, the server will output the local address, typically:
-`http://localhost:3000/`
+
+If the app does not start from the root, you can also run the commands from the `app` folder directly:
+
+```bash
+cd app
+npm install
+npm run dev
+```
 
 ---
 
-## 🛠️ Production Build & Preview
+## 📦 Available Scripts
 
-To compile the application into static HTML/JS/CSS assets for deployment:
+Run from the repository root:
 
-1. **Build the production bundle**:
-   ```bash
-   npm run build
-   ```
-2. **Preview the production build locally**:
-   ```bash
-   npm run preview
-   ```
+- `npm run dev` — start the development server for `app`
+- `npm run build` — build the production bundle for `app`
+- `npm run preview` — preview the production build locally
 
 ---
 
-## ✨ Features & Polish
+## ✨ Core Features
 
-- **Vibrant Aesthetic**: Handpicked HSL-based color tokens, curated typography, and subtle layout highlights (`highlight-yellow`, `highlight-pink`, `highlight-green`).
-- **Dynamic Scroll Animations**: Interactive visual components powered by GSAP and ScrollTrigger animate into view smoothly as you scroll down.
-- **Spotlight Image Zoom Hover Effects**: Every image (floating team avatar circles, meeting graphics, working illustrations, client avatars) zooms in smoothly on hover, remaining perfectly masked by its parent boundaries.
-- **Responsive Layout**: Designed to adapt seamlessly across mobile, tablet, and desktop screens.
+- Responsive landing page layout designed for desktop, tablet, and mobile
+- Smooth scroll reveal animations with GSAP and ScrollTrigger
+- Elegant typography using Playfair Display for headings and Inter for body text
+- Modular section-based structure for easy content reordering
+- Modern UI components using Radix primitives and Shadcn-inspired wrappers
+- Hover-enabled image reveal and subtle motion interactions
+
+---
+
+## 📌 Notes
+
+- The root `package.json` uses npm workspaces to manage the `app` package.
+- The main application lives in `app/`, so development and build commands target that workspace.
+- Use `npm run lint` inside `app/` if you want to run ESLint on the React source.
